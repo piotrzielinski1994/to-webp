@@ -4,9 +4,6 @@ services:
   to-webp:
     build: ./
     restart: unless-stopped
-    tty: true
-    volumes:
-      - ~/shared:/shared
     expose:
       - 3000
     networks:
@@ -20,16 +17,3 @@ services:
 networks:
   traefik:
     external: true
-# version: '3'
-
-# services:
-#   app:
-#     image: node:16
-#     container_name: foo
-#     working_dir: /var/www/foo
-#     user: node
-#     tty: true
-#     ports:
-#       - 3000:3000
-#     volumes:
-#       - ./:/var/www/foo
